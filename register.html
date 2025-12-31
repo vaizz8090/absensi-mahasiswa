@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+  <div class="auth-container">
+    <div class="auth-box">
+
+      <h2 class="auth-title">Register</h2>
+
+      <form id="registerForm">
+
+        <div class="input-group">
+          <span class="icon">👤</span>
+          <input type="text" id="regUser" placeholder="Username" required>
+        </div>
+
+        <div class="input-group">
+          <span class="icon">🔒</span>
+          <input type="password" id="regPass" placeholder="Password" required>
+        </div>
+
+        <button type="submit" class="btn-primary">Daftar</button>
+
+        <p class="switch-text">
+          Sudah punya akun? <a href="login.html">Login</a>
+        </p>
+
+      </form>
+    </div>
+  </div>
+
+<script src="auth.js"></script>
+</body>
+</html>

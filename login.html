@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+  <div class="auth-container">
+    <div class="auth-box">
+
+      <h2 class="auth-title">Login</h2>
+
+      <form id="loginForm">
+
+        <div class="input-group">
+          <span class="icon">👤</span>
+          <input type="text" id="loginUser" placeholder="Username" required>
+        </div>
+
+        <div class="input-group">
+          <span class="icon">🔒</span>
+          <input type="password" id="loginPass" placeholder="Password" required>
+        </div>
+
+        <div class="captcha-group">
+          <span id="captchaCode" class="captcha-box">0000</span>
+          <input type="text" id="captchaInput" placeholder="Kode Keamanan" required>
+        </div>
+
+        <button type="submit" class="btn-primary">Masuk</button>
+
+        <p class="switch-text">
+          Belum punya akun? <a href="register.html">Daftar</a>
+        </p>
+
+      </form>
+    </div>
+  </div>
+
+<script src="auth.js"></script>
+</body>
+</html>

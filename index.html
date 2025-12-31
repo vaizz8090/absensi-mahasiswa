@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<script>
+  if (sessionStorage.getItem("logged_in") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
+<script>
+  // Cek apakah user sudah login
+  if (sessionStorage.getItem("logged_in") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aplikasi Absensi Mahasiswa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<div class="app">
+
+  <button onclick="logout()" class="btn-secondary"
+    style="position:absolute; top:20px; right:20px; padding:6px 14px;">
+    Logout
+  </button>
+
+  <!-- (SEMUA TAMPILAN ABSENSI ASLI TETAP SAMA) -->
+  <!-- HANYA SCRIPT LOGIN YG DITAMBAHKAN -->
+
+  <header class="header-glass">
+      <div class="header-content">
+        <div class="header-icon">🎓</div>
+        <div>
+          <h1>Absensi Mahasiswa</h1>
+          <p>Catat, pantau, dan kelola kehadiran mahasiswa secara mudah</p>
+        </div>
+      </div>
+  </header>
+
+  <section class="search-bar">
+    <input type="text" id="searchInput" placeholder="🔍 Cari nama mahasiswa atau NIM..." />
+  </section>
+
+  <section id="formSection" class="form-section">
+    <form id="absenForm">
+      <div class="form-group">
+  <label>Nama Mahasiswa</label>
+  <input
+    type="text"
+    id="nama"
+    placeholder="Masukkan Nama"
+    required
+    oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')"
+  />
+</div>
+
+<div class="form-group">
+  <label>NIM</label>
+  <input
+    type="text"
+    id="nim"
+    placeholder="Masukkan NIM "
+    required
+    oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+  />
+</div>
+
+<div class="form-group">
+  <label>Alasan Kehadiran</label>
+  <select id="alasan" required>
+    <option value="">-- Pilih Alasan --</option>
+    <option value="Bolos">Bolos</option>
+    <option value="Sakit">Sakit</option>
+    <option value="Izin">Izin</option>
+  </select>
+</div>
+
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Simpan</button>
+        <button type="button" id="cancelBtn" class="btn-secondary">Batal</button>
+      </div>
+    </form>
+  </section>
+
+  <main>
+    <div class="table-section">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Alasan</th>
+            <th>Waktu</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="absenBody"></tbody>
+      </table>
+    </div>
+
+    <div class="info-bar">
+      <div class="total-card">
+        <div class="total-icon">👥</div>
+        <div class="total-text">
+          <span>Total Mahasiswa</span>
+          <strong id="totalMahasiswa">0</strong>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="exportCsv" class="btn-secondary">Export CSV</button>
+        <button id="clearAll" class="btn-danger">Hapus Semua</button>
+      </div>
+    </div>
+  </main>
+
+  <button id="addBtn" class="floating-btn">+</button>
+
+  <footer>
+    © 2025 Absensi Mahasiswa — Dibuat Oleh Vaizzz Dan Dapaaa
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+function logout() {
+    const yakin = confirm("Apakah Anda yakin ingin logout?");
+    if (yakin) {
+        localStorage.removeItem("loggedUser");
+        sessionStorage.removeItem("logged_in");
+        sessionStorage.removeItem("username");
+        window.location.href = "login.html";
+    }
+}
+</script>
+
+
+</body>
+</html>

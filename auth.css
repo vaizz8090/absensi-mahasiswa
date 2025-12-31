@@ -1,0 +1,174 @@
+/* ===================================================
+   AUTH (LOGIN & REGISTER)
+   Tema Hijau — FINAL STABIL
+   =================================================== */
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== CONTAINER ===== */
+
+.auth-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.auth-box {
+  width: 100%;
+  max-width: 380px;
+  background: #ffffff;
+  padding: 36px 30px 32px;
+  border-radius: 16px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+/* ===== TITLE ===== */
+
+.auth-title {
+  margin-bottom: 28px;
+  color: #1b5e20;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* ===== INPUT GROUP ===== */
+
+.input-group {
+  position: relative;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.input-group input {
+  width: 100%;
+  max-width: 300px;              /* ⬅️ BIAR TIDAK MELEBIHI GARIS */
+  padding: 12px 14px 12px 40px;
+  border-radius: 10px;
+  border: 1.8px solid #bbf7d0;
+  outline: none;
+  font-size: 14.5px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+}
+
+.input-group .icon {
+  position: absolute;
+  left: calc(50% - 140px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #0b6b1d;
+  opacity: 0.85;
+}
+
+/* ===== CAPTCHA ===== */
+
+.captcha-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.captcha-box {
+  background: #1b5e20;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 10px;
+  letter-spacing: 3px;
+  user-select: none;
+}
+
+.captcha-group input {
+  width: 100%;
+  max-width: 160px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1.8px solid #bbf7d0;
+  font-size: 14px;
+  outline: none;
+}
+
+.captcha-group input:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+}
+
+/* ===== BUTTON ===== */
+
+.btn-primary {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(34, 197, 94, 0.35);
+}
+
+/* ===== SWITCH TEXT ===== */
+
+.switch-text {
+  margin-top: 20px;
+  font-size: 13.5px;
+  color: #444;
+}
+
+.switch-text a {
+  color: #1b5e20;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.switch-text a:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 420px) {
+  .auth-box {
+    padding: 30px 22px;
+  }
+
+  .input-group input,
+  .btn-primary {
+    max-width: 100%;
+  }
+
+  .input-group .icon {
+    left: 18px;
+  }
+}
